@@ -10,7 +10,8 @@ class Square:
 
         Args:
             size (int, optional): The size of the new square. Defaults to 0.
-            position (tuple, optional): The position of the new square. Defaults to (0, 0).
+            position (tuple, optional): The position of the new square.
+                Defaults to (0, 0).
         """
         self.size = size
         self.position = position
@@ -83,7 +84,7 @@ class Square:
 
     def __str__(self):
         """String representation of the square, handling size and position.
-        
+
         Returns:
             str: the square formatted to be printed.
         """
@@ -93,6 +94,6 @@ class Square:
         string_repr = "\n" * self.__position[1]
         for _ in range(self.__size):
             string_repr += " " * self.__position[0] + "#" * self.__size + "\n"
-        
+
         # Remove trailing newline to avoid adding an extra one when printed
         return string_repr[:-1]
