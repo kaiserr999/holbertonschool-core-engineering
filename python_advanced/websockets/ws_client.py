@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import asyncio
+import os
 import websockets
 
 
@@ -11,7 +12,8 @@ async def connect_and_send(uri: str, text: str) -> str:
 
 
 async def main():
-    response = await connect_and_send("ws://localhost:8765", "Hello WebSocket")
+    uri = os.environ.get("WS_URI", "ws://localhost:8765")
+    response = await connect_and_send(uri, "demo")
     print(response, end="")
 
 
