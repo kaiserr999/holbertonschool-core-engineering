@@ -3,13 +3,13 @@ import asyncio
 import websockets
 
 
-async def handler(websocket):
+async def connection_handler(websocket):
     async for message in websocket:
         await websocket.send(message)
 
 
 async def main():
-    async with websockets.serve(handler, "0.0.0.0", 8765):
+    async with websockets.serve(connection_handler, "0.0.0.0", 8765):
         await asyncio.Future()
 
 
